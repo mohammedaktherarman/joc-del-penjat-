@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joc del penjat</title>
+    <link rel="stylesheet" href="/style/style.css"> 
+</head>
+<body>
+
+    <div>
+        <input type="password" id="input" placeholder="Introdueix una paraula">
+        <button id="botonMostrar" onmousedown="mostrar()" onmouseup="ocultar()">Mostra</button>
+        <button id="botonComençar" onclick="començarPartida()">Començar partida</button>
+    </div>
+
+    <div id="divparaula">
+        <h1 id="paraula"></h1>
+    </div>
+
+    <div id="imatge">
+        <img id="penjat" src="/imatges/penjat_0.jpg" alt="Imatge del penjat">
+    </div>
+
+    <div id="botons" style="display: none;">
+        <button id="botoA" onclick="comprovarLletra('A')">A</button>
+        <button id="botoB" onclick="comprovarLletra('B')">B</button>
+        <button id="botoC" onclick="comprovarLletra('C')">C</button>
+        <button id="botoD" onclick="comprovarLletra('D')">D</button>
+        <button id="botoE" onclick="comprovarLletra('E')">E</button>
+        <button id="botoF" onclick="comprovarLletra('F')">F</button>
+        <button id="botoG" onclick="comprovarLletra('G')">G</button>
+        <button id="botoH" onclick="comprovarLletra('H')">H</button>
+        <button id="botoI" onclick="comprovarLletra('I')">I</button>
+        <button id="botoJ" onclick="comprovarLletra('J')">J</button>
+        <button id="botoK" onclick="comprovarLletra('K')">K</button>
+        <button id="botoL" onclick="comprovarLletra('L')">L</button>
+        <button id="botoM" onclick="comprovarLletra('M')">M</button>
+        <button id="botoN" onclick="comprovarLletra('N')">N</button>
+        <button id="botoO" onclick="comprovarLletra('O')">O</button>
+        <button id="botoP" onclick="comprovarLletra('P')">P</button>
+        <button id="botoQ" onclick="comprovarLletra('Q')">Q</button>
+        <button id="botoR" onclick="comprovarLletra('R')">R</button>
+        <button id="botoS" onclick="comprovarLletra('S')">S</button>
+        <button id="botoT" onclick="comprovarLletra('T')">T</button>
+        <button id="botoU" onclick="comprovarLletra('U')">U</button>
+        <button id="botoV" onclick="comprovarLletra('V')">V</button>
+        <button id="botoW" onclick="comprovarLletra('W')">W</button>
+        <button id="botoX" onclick="comprovarLletra('X')">X</button>
+        <button id="botoY" onclick="comprovarLletra('Y')">Y</button>
+        <button id="botoZ" onclick="comprovarLletra('Z')">Z</button>
+    </div>
+    
+    <div id="informacio">
+        <p id="puntuacio">Puntuació: 0</p>
+        <p id="totalPartides">Total partides: 0</p>
+        <p id="partidesGuanyades">Partides guanyades: 0</p>
+        <p id="percentatgeGuanyades">Percentatge de partides guanyades: 0%</p>
+        <p id="puntuacioMesAlta">Partida amb més punts: 0 punts</p>
+    </div>
+
+    <script src="/script/main.js"></script>
+</body>
+</html>
