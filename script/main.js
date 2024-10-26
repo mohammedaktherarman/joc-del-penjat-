@@ -7,14 +7,26 @@ let partidesGuanyades = 0;
 let puntuacioMaxima = 0;
 let encertsConsecutius = 0;
 
-document.getElementById("input").addEventListener("input", function() {
-    const botonComencar = document.getElementById("botonComençar");
-    if (this.value.trim() === "") {
-        botonComencar.disabled = true;
-    } else {
-        botonComencar.disabled = false;
+
+// Activa o desactiva el boto  si el imput te text o no
+document.getElementById("input").oninput = function() {
+    let botonComencar = document.getElementById("botonComençar");
+    let inputValue = document.getElementById("input").value;
+
+    let tieneTexto = false;
+    for (let i = 0; i < inputValue.length; i++) {
+        if (inputValue[i] !== " ") {
+            tieneTexto = true;
+            break;
+        }
     }
-});
+
+    if (tieneTexto) {
+        botonComencar.removeAttribute("disabled");
+    } else {
+        botonComencar.setAttribute("disabled", "disabled");
+    }
+};
 
 function mostrar() {
     document.getElementById("input").type = "text";
@@ -77,6 +89,8 @@ function actualitzarImatge() {
     document.getElementById("penjat").src = `/imatges/penjat_${errors}.jpg`;
 }
 
+
+// comprova la lletra on click y se ha encertat es posa en la paraula y desactiva i cambia el colo del boto seleccionat
 function comprovarLletra(lletra) {
     let encert = false;
     let novaParaulaGuions = "";
@@ -115,6 +129,7 @@ function comprovarLletra(lletra) {
     verificarFinal();
 }
 
+//funcio que reinicia els botons quan es perd o es gana
 function reiniciarBotones() {
     const contenedorBotones = document.getElementById("botons");
     const botones = contenedorBotones.getElementsByTagName("button");
@@ -126,6 +141,7 @@ function reiniciarBotones() {
     }
 }
 
+//funcio que verificar si ha perdut per intents o detecta si ja no hi ha guions per tant ha completat la paraula 
 function verificarFinal() {
     if (errors === 10) {  
         document.getElementById("paraula").style.backgroundColor = "red"; 
@@ -135,7 +151,7 @@ function verificarFinal() {
     }
 }
 
-
+//funcio que quan es finalitza la partida, activa de nou els botons i posa el background color depenen de si ha guanyat o perdut
 function finalitzarPartida(guanyada) {
     document.getElementById("botons").style.display = "none";
     totalPartides++;
@@ -163,6 +179,7 @@ function actualitzarPuntuacio() {
     document.getElementById("puntuacio").textContent = "Puntuació: " + puntuacio; 
 }
 
+//funcio que actualiza la informacio del jugador
 function actualitzarInformacioJugador() {
     let percentatgeGuanyades;
     if (partidesGuanyades > 0) {

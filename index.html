@@ -8,19 +8,27 @@
 </head>
 <body>
 
+    <!-- el input i els dos botons el de mostrar i el de comença partida --> 
+
     <div>
         <input type="password" id="input" placeholder="Introdueix una paraula">
         <button id="botonMostrar" onmousedown="mostrar()" onmouseup="ocultar()">Mostra</button>
         <button id="botonComençar" onclick="començarPartida()">Començar partida</button>
     </div>
 
+    <!-- paraula --> 
+
     <div id="divparaula">
         <h1 id="paraula"></h1>
     </div>
 
+    <!-- imatge --> 
+
     <div id="imatge">
         <img id="penjat" src="/imatges/penjat_0.jpg" alt="Imatge del penjat">
     </div>
+
+    <!-- butons --> 
 
     <div id="botons" style="display: none;">
         <button id="botoA" onclick="comprovarLletra('A')">A</button>
@@ -50,6 +58,8 @@
         <button id="botoY" onclick="comprovarLletra('Y')">Y</button>
         <button id="botoZ" onclick="comprovarLletra('Z')">Z</button>
     </div>
+
+    <!--informacio del jugador--> 
     
     <div id="informacio">
         <p id="puntuacio">Puntuació: 0</p>
