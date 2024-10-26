@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
     text-align: center;
@@ -14,7 +13,6 @@ h1 {
 
 button:disabled {
     background-color: #ccc;
-    cursor: not-allowed;
 }
 
 #divparaula {
@@ -37,22 +35,17 @@ button:disabled {
 }
 
 #informacio {
-    background-color: green;
     width: fit-content;
 }
 
-#informacio1{
-    background-color: red;
-}
-
-#informacio, #informacio1 {
+#informacio{
     display: inline-block; 
     margin: 20px;
     font-size: 1.2em;
     width: fit-content; 
 }
 
-#informacio p, #informacio1 p {
+#informacio p {
     margin: 5px 0;
 }
 
@@ -72,7 +65,6 @@ button:disabled {
     border: none;
     border-radius: 5px;
     font-size: 1em;
-    cursor: pointer;
     margin: 10px;
 }
 
